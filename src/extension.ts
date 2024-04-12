@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
-
+import { readFile } from "./help";
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
@@ -15,25 +15,18 @@ export function activate(context: vscode.ExtensionContext) {
   // Now provide the implementation of the command with registerCommand
   // The commandId parameter must match the command field in package.json
   const disposable = vscode.commands.registerCommand("bugfree", () => {
-    // The code you place here will be executed every time your command is executed
-    // Display a message box to the user
-    vscode.window.showInformationMessage("Hello World from vscode-bugfree!");
+    const content = readFile("default");
+    insertContent(content);
   });
 
   const disposable2 = vscode.commands.registerCommand("bugfree-alpaca", () => {
-    // The code you place here will be executed every time your command is executed
-    // Display a message box to the user
-    vscode.window.showInformationMessage(
-      "Hello World from vscode-bugfree-alpaca!"
-    );
+    const content = readFile("alpaca");
+    insertContent(content);
   });
 
   const disposable3 = vscode.commands.registerCommand("bugfree-god", () => {
-    // The code you place here will be executed every time your command is executed
-    // Display a message box to the user
-    vscode.window.showInformationMessage(
-      "Hello World from vscode-bugfree-god!"
-    );
+    const content = readFile("god");
+    insertContent(content);
   });
 
   context.subscriptions.push(disposable);
@@ -41,5 +34,17 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(disposable3);
 }
 
-// This method is called when your extension is deactivated
-export function deactivate() {}
+function insertContent(content: string) {
+  const activeEditor = vscode.window.activeTextEditor;
+  if (!activeEditor) {
+    vscode.window.showErrorMessage(
+      "Can't insert text because no document is open"
+    );
+    return;
+  }
+  // 插入内容到文件头部
+  activeEditor.edit((editBuilder) => {
+    // 将内容插入到文件的开头
+    editBuilder.insert(new vscode.Position(0, 0), content);
+  });
+}
