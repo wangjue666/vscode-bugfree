@@ -32,6 +32,12 @@
 
 ```
 
+## 如何使用
+
+在 vscode 商场搜索 bugfree, 安装即可
+
+在编辑器使用`cmd+shift+p`，键入 `bugfree` 即可看到效果
+
 ## 参考
 
 https://github.com/ottomao/bugfreejs
