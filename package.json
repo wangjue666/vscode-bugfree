@@ -4,7 +4,7 @@
   "description": "佛祖保佑，永无bug",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.88.0"
+    "vscode": "^1.85.1"
   },
   "categories": [
     "Other"
@@ -14,8 +14,16 @@
   "contributes": {
     "commands": [
       {
-        "command": "vscode-bugfree.helloWorld",
-        "title": "Hello World"
+        "command": "bugfree",
+        "title": "bugfree佛祖"
+      },
+      {
+        "command": "bugfree-alpaca",
+        "title": "bugfree神兽（羊驼）"
+      },
+      {
+        "command": "bugfree-god",
+        "title": "bugfree耶稣"
       }
     ]
   },
