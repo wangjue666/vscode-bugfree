@@ -31,3 +31,7 @@
 
 
 ```
+
+## 参考
+
+https://github.com/ottomao/bugfreejs
