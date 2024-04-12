@@ -1,11 +1,14 @@
 {
-  "name": "vscode-bugfree",
-  "displayName": "vscode-bugfree",
+  "name": "bugfree",
+  "displayName": "bugfree",
   "description": "佛祖保佑，永无bug",
+  "author": "wangjuesix",
+  "publisher": "bugfree",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.85.1"
   },
+  "repository": "https://github.com/wangjue666/vscode-bugfree",
   "categories": [
     "Other"
   ],
@@ -33,17 +36,19 @@
     "watch": "tsc -watch -p ./",
     "pretest": "pnpm run compile && pnpm run lint",
     "lint": "eslint src --ext ts",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "package": "pnpm vsce package --no-dependencies"
   },
   "devDependencies": {
-    "@types/vscode": "^1.85.1",
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
+    "@types/vscode": "^1.85.1",
     "@typescript-eslint/eslint-plugin": "^7.4.0",
     "@typescript-eslint/parser": "^7.4.0",
-    "eslint": "^8.57.0",
-    "typescript": "^5.3.3",
     "@vscode/test-cli": "^0.0.8",
-    "@vscode/test-electron": "^2.3.9"
+    "@vscode/test-electron": "^2.3.9",
+    "@vscode/vsce": "^2.24.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3"
   }
 }
