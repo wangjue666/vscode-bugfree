@@ -15,15 +15,15 @@
     "commands": [
       {
         "command": "bugfree",
-        "title": "bugfree佛祖"
+        "title": "佛祖保佑，永无bug"
       },
       {
         "command": "bugfree-alpaca",
-        "title": "bugfree神兽（羊驼）"
+        "title": "神兽（羊驼）保佑，永无bug"
       },
       {
         "command": "bugfree-god",
-        "title": "bugfree耶稣"
+        "title": "耶稣保佑，永无bug"
       }
     ]
   },
